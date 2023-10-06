@@ -12,7 +12,7 @@ Lectures and computer labs storage for IW1 course at FIT VUT.
 | **L03** | 06.10. | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT**                        |
 | E02     | 06.10. | Vytváření, správa a nasazení bitových kopií systému, konfigurační průchody, virtuální disky |
 | **L04** | 06.10. | **Nastavení sítě, IPv4, IPv6, směrování, nástroje pro správu, bezdrátové sítě, tiskárny**   |
-| E03     | 06.10. | Síťování ve Windows, Windows Firewall, IP adresace, vzdálená správa                         |
 | **L05** | 06.10. | **Sdílení a zabezpečení prostředků, soubory offline, NTFS, EFS, BitLocker**                 |
+| E03     | 06.10. | Síťování ve Windows, Windows Firewall, IP adresace, vzdálená správa                         |
 
 **TBD**

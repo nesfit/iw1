@@ -19,9 +19,9 @@ Lectures and computer labs storage for IW1 course at FIT VUT.
 | **L07** | 13.10. | **Řízení uživatelských účtů (UAC)**                                                                     |
 | **L08** | 13.10. | **Správa zařízení, disků, ovladačů a napájení**                                                         |
 | E05     | 13.10. | Řízení uživatelských účtů (UAC)                                                                         |
-| **L09** | 13.10. | **Monitorování a výkon, centrum akcí, správce úloh, služby, event viewer, perfmon**                     |
-| E06     | 13.10. | Monitorování a výkon, centrum akcí, správce úloh, služby, event viewer, perfmon                         |
-| **L10** | 13.10. | **Zálohování a obnova dat, stínové kopie, předchozí verze, bitová kopie, Windows Recovery Environment** |
+| **L09** | 20.10. | **Monitorování a výkon, centrum akcí, správce úloh, služby, event viewer, perfmon**                     |
+| E06     | 20.10. | Monitorování a výkon, centrum akcí, správce úloh, služby, event viewer, perfmon                         |
+| **L10** | 20.10. | **Zálohování a obnova dat, stínové kopie, předchozí verze, bitová kopie, Windows Recovery Environment** |
 
 
 **TBD**

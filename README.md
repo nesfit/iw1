@@ -6,7 +6,7 @@ Lectures and computer labs storage for IW1 course at FIT VUT.
 | ------- | ------ | ------------------------------------------------------------------------------------------------------- |
 | **L00** | 18.09. | **Úvod**                                                                                                |
 | **L01** | 18.09. | **Instalace, Update, Migrace**                                                                          |
-| E01     | 22.02. | Instalace, Update, Migrace                                                                              |
+| E01     | 22.09. | Instalace, Update, Migrace                                                                              |
 | **L02** | 22.09. | **Vytváření bitových kopií systému, konfigurační průchody, virtuální disky**                            |
 | **L02** | 22.09. | **Správa a nasazení bitových kopií systému**                                                            |
 | **L03** | 06.10. | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT**                                    |
@@ -22,6 +22,5 @@ Lectures and computer labs storage for IW1 course at FIT VUT.
 | **L09** | 20.10. | **Monitorování a výkon, centrum akcí, správce úloh, služby, event viewer, perfmon**                     |
 | E06     | 20.10. | Monitorování a výkon, centrum akcí, správce úloh, služby, event viewer, perfmon                         |
 | **L10** | 20.10. | **Zálohování a obnova dat, stínové kopie, předchozí verze, bitová kopie, Windows Recovery Environment** |
-
-
-**TBD**
+| **L11** | 20.10. | **Kompatibilita aplikací, virtualizace pomocí Hyper-V, VPN, NAP, RD Gateway**                           |
+| **L12** | 20.10. | **Windows Update, WSUS**                                                                                |

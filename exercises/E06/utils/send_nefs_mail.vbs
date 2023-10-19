@@ -12,7 +12,7 @@ dim wmiService, diskC
 
 ' Parse arguments
 if wscript.arguments.count <> 1 then
-  wscript.echo "Špatný poèet parametrù!" & vbCrLf & "Použití:" & vbCrLf & "  send_nefs_mail.vbs email"
+  wscript.echo "ï¿½patnï¿½ poï¿½et parametrï¿½!" & vbCrLf & "Pouï¿½itï¿½:" & vbCrLf & "  send_nefs_mail.vbs email"
   wscript.quit
 else
   sendto = wscript.arguments(0)
@@ -39,7 +39,7 @@ set email = CreateObject("CDO.Message")
 email.Subject = "Not Enought Free Space"
 email.From = "iwxmwxeventalertsender@seznam.cz" '"iwx.mwx@gmail.com"
 email.To = sendTo
-email.TextBody = "Na poèítaèí " & hostname & " dochází místo na disku C, disk obsahuje pouze " & pFreeSpace & "% volného místa."
+email.TextBody = "Na poï¿½ï¿½taï¿½ï¿½ " & hostname & " dochï¿½zï¿½ mï¿½sto na disku C, disk obsahuje pouze " & pFreeSpace & "% volnï¿½ho mï¿½sta."
 
 ' Remote SMTP Server configuration
 
@@ -59,7 +59,7 @@ email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/
 email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/sendusername") = "iwxmwxeventalertsender@seznam.cz" '"iwx.mwx@gmail.com"
 
 ' Password
-email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = "Dn2hmMuUZH" '"aaaAAA111"
+email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/sendpassword") = ""
 
 ' Use SSL for the connection (False or True)
 email.Configuration.Fields.Item("http://schemas.microsoft.com/cdo/configuration/smtpusessl") = True

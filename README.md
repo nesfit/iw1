@@ -6,10 +6,10 @@ Lectures and computer labs storage for IW1 course at FIT VUT.
 | ------- | ------ | ------------------------------------------------------------------------------------------------------- |
 | **L00** | 16.09. | **Úvod**                                                                                                |
 | **L01** | 16.09. | **Instalace, Update, Migrace**                                                                          |
-| E01     |        | Instalace, Update, Migrace                                                                              |
-| **L02** |        | **Vytváření bitových kopií systému, konfigurační průchody, virtuální disky**                            |
-| **L03** |        | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT**                                    |
-| E02     |        | Vytváření, správa a nasazení bitových kopií systému, konfigurační průchody, virtuální disky             |
+| E01     | 20.09. | Instalace, Update, Migrace                                                                              |
+| **L02** | 20.09. | **Vytváření bitových kopií systému, konfigurační průchody, virtuální disky**                            |
+| **L03** | 20.09. | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT**                                    |
+| E02     | 20.09. | Vytváření, správa a nasazení bitových kopií systému, konfigurační průchody, virtuální disky             |
 | **L04** |        | **Nastavení sítě, IPv4, IPv6, směrování, nástroje pro správu, bezdrátové sítě, tiskárny**               |
 | **L05** |        | **Windows Firewall, vzdálená plocha/správa**                                                            |
 | E03     |        | Síťování ve Windows, Windows Firewall, IP adresace, vzdálená správa                                     |

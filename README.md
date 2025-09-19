@@ -4,14 +4,14 @@ Lectures and computer labs storage for [IW1](https://www.fit.vut.cz/study/course
 
 | ID      | Datum  | Téma                                                                                                    |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------- |
-| **L00** |        | **Úvod**                                                                                                |
-| **L01** |        | **Instalace, Update, Migrace**                                                                          |
-| E01     |        | Instalace, Update, Migrace                                                                              |
-| **L02** |        | **Vytváření bitových kopií systému, konfigurační průchody, virtuální disky**                            |
-| **L03** |        | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT**                                    |
-| E02     |        | Vytváření, správa a nasazení bitových kopií systému, konfigurační průchody, virtuální disky             |
-| **L04** |        | **Nastavení sítě, IPv4, IPv6, směrování, nástroje pro správu, bezdrátové sítě, tiskárny**               |
-| **L05** |        | **Windows Firewall, vzdálená plocha/správa**                                                            |
+| **L00** | 19.09. | **Úvod**                                                                                                |
+| **L01** | 19.09. | **Instalace, Update, Migrace**                                                                          |
+| E01     | 19.09. | Instalace, Update, Migrace                                                                              |
+| **L02** | 19.09. | **Vytváření bitových kopií systému, konfigurační průchody, virtuální disky**                            |
+| **L03** | 19.09. | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT**                                    |
+| E02     | 19.09. | Vytváření, správa a nasazení bitových kopií systému, konfigurační průchody, virtuální disky             |
+| **L04** | 19.09. | **Nastavení sítě, IPv4, IPv6, směrování, nástroje pro správu, bezdrátové sítě, tiskárny**               |
+| **L05** | 19.09. | **Windows Firewall, vzdálená plocha/správa**                                                            |
 | E03     |        | Síťování ve Windows, Windows Firewall, IP adresace, vzdálená správa                                     |
 | **L06** |        | **Sdílení a zabezpečení prostředků, soubory offline, NTFS, EFS, BitLocker**                             |
 | E04     |        | Sdílení a zabezpečení prostředků, soubory offline, NTFS, EFS                                            |

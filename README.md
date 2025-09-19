@@ -1,5 +1,5 @@
 # IW1
-Lectures and computer labs storage for [IW1](https://www.fit.vut.cz/study/course/280950/.cs) course at FIT VUT.
+Lectures and computer labs storage for [IW1](https://www.fit.vut.cz/study/course/294184) course at FIT VUT.
 
 
 | ID      | Datum  | Téma                                                                                                    |

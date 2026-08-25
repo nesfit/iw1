@@ -11,6 +11,10 @@ this section and update it when the room changes.
 - Drives: `C:` system — **UWF-protected** (a reboot rolls back everything on
   C:, including `C:\ProgramData\AutomatedLab` metadata and Hyper-V VM
   registrations); `D:` (data-ssd) and `E:` (data-nvme) **persist**.
+  Because they persist, student artifacts accumulate there (e.g. the WinPE
+  ISOs students copy into `D:\LabSources\ISOs` in E02 LS01) — sweep them
+  between semesters, keeping the `D:\LabSources` payloads and
+  `E:\AutomatedLab-VMs\BASE_*.vhdx`.
 - Hyper-V enabled; default VM + VHD path `E:\AutomatedLab-VMs`. The
   `BASE_*.vhdx` parent disks there survive resets — never delete them, they
   cut a redeploy from ~40 to ~7 minutes.

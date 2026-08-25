@@ -42,7 +42,15 @@ part identical and the per-exercise delta minimal:
 - defaults `'Windows 11 Pro'`, 8 GB RAM, 4 vCPU per machine — at most 3 VMs
   concurrently (host budget ≤ 32 GB RAM and ≤ 12 vCPU for VMs),
 - adapters: `LAN0` → 'Default Switch' (DHCP), `LAN1` → Private1 with fixed
-  addressing — clients `.10`/`.11`/`.12`, DC `.20`, domain client `.21`,
+  addressing — clients `.10`/`.11`/`.12`, DC `.20`, domain client `.21`.
+  **Exception:** in the domain labs (E05, E06) every machine has only the
+  Private1 adapter (no internet) — AutomatedLab 5.61 crashes in
+  `Wait-LWHypervVMRestart` ('Cannot index into a null array') when machines
+  with more than one adapter wait behind a RootDC installation; a one-line
+  fix in `AutomatedLabWorker.psm1` would lift this (in
+  `Wait-LWHypervVMRestart`, under the multi-NIC check, delay the inspected
+  machine first — `$delayedStart += $StartMachinesWhileWaiting[0]` — and
+  only then filter it out of the list, keeping the result an array),
 - AutomatedLab **disables UAC** inside lab VMs; exercises that depend on UAC
   (E03, E05) re-enable it at the end of their script,
 - teardown between exercises: `Import-Lab -Name <id> -NoValidation;

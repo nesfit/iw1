@@ -81,3 +81,42 @@ settings; the preview then matches the CLI output.
   Education 25H2).
 - The old `.pptx` sources live in `.tmp/` (git-ignored) until every deck is
   converted; use `nix run .#pptx-dump` to pull their text, links and images.
+
+## Emphasis: what is bold, italic and code
+
+The lecturer reads the slide in a glance while talking. Every mark has one
+meaning, so the eye can jump from anchor to anchor without reading the prose.
+
+- **Bold** (`**…**`, rendered blue) is the *anchor* of a bullet: the term,
+  feature, tool or the one number/date the bullet is about.
+  - Every top-level bullet on a content slide has one anchor, as close to the
+    start of the bullet as the sentence allows (`- **Stínové kopie** – …`).
+  - Two or more anchors in one bullet only when the bullet enumerates named
+    items (`**Home**, **Pro**, **Enterprise**`) or contrasts two things.
+  - Sub-bullets get an anchor only when they introduce a term of their own
+    (a list of modes, editions, steps); explanatory sub-bullets stay plain.
+    Third-level bullets never carry bold.
+  - In a sequence of steps, the anchor is the word that distinguishes the
+    step (the actor or the action).
+  - Bold the term, never the sentence: at most ~4 words, no verbs or filler
+    (`je`, `lze`, `vyžaduje`), no whole bullets. A number is the anchor only
+    when the number is the point (`max. **64** stínových kopií na svazek`).
+  - Bold does not mean "warning". Use `<span class="warn">…</span>` or the
+    word `pozor` for that.
+- *Italic* (`*…*`) marks names read out as they appear on screen, untranslated:
+  the English original after a Czech term (`Stínová kopie svazku (*Volume
+  Shadow Copy Service*, VSS)`), UI labels and the last item of a menu path
+  (`Nastavení > Windows Update > *Vyhledat aktualizace*`), Group Policy
+  setting names (*Configure Automatic Updates*), wizard and dialog titles,
+  book titles, and status words quoted as-is (*deprecated*, *enablement
+  package*). Italic is never used for emphasis.
+- `code` is anything typed or a technical identifier: commands, cmdlets,
+  parameters, file and registry paths, service names (`wuauserv`), ports,
+  XML elements, environment variables.
+- Nothing else: no bold+italic, no underline, no CAPS or emoji for emphasis.
+  Headings carry no bold; in tables only the cell that is the point of the
+  comparison is bold. Speaker notes (HTML comments) are plain text.
+- The text of a bullet may be tightened so the anchor comes first (`Je
+  určen pro` → `Určen pro`; `Každý svazek může obsahovat maximálně 64
+  stínových kopií` → `Max. **64 stínových kopií** na svazek`), but the
+  meaning, facts and order of bullets stay the same and nothing is dropped.

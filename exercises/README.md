@@ -1,5 +1,22 @@
 # IW1 exercises
 
+## How the exercises are run (from September 2026)
+
+- The course is taught in three one-day modules (Fridays 18.9., 2.10., 9.10.; blocks
+  7–13 h and 13–19 h). Module 1 = E01 + E02 (7 points), module 2 = E03 + E04
+  (7 points), module 3 = E05 + E06 (6 points); 20 points in total, they form the
+  zápočet.
+- There is no lecturer-led part. Every exercise is `Lab 00` (AutomatedLab setup of
+  the VMs) followed by `Lab 01`, `Lab 02`, … that students work through on their
+  own, following the step-by-step instructions, and ask the lecturer only about
+  details. `Bodované úkoly` at the end are graded.
+- The introductory theory at the top of each exercise explains the topic; it is
+  meant mainly for students who complete the exercise on their own.
+- Absence: the exercise can be completed offline (at home, in Hyper-V or another
+  hypervisor) and reported by e-mail to pluskal@vut.cz as one PDF: a short
+  description of how each task was solved plus screenshots showing the tasks were
+  done to a reasonable extent.
+
 ## Station contract (C304, rebuilt August 2026)
 
 Everything in `E01`–`E06` assumes the environment below. Check edits against
@@ -12,7 +29,7 @@ this section and update it when the room changes.
   C:, including `C:\ProgramData\AutomatedLab` metadata and Hyper-V VM
   registrations); `D:` (data-ssd) and `E:` (data-nvme) **persist**.
   Because they persist, student artifacts accumulate there (e.g. the WinPE
-  ISOs students copy into `D:\LabSources\ISOs` in E02 LS01) — sweep them
+  ISOs students copy into `D:\LabSources\ISOs` in E02 Lab 02) — sweep them
   between semesters, keeping the `D:\LabSources` payloads and
   `E:\AutomatedLab-VMs\BASE_*.vhdx`.
 - Hyper-V enabled; default VM + VHD path `E:\AutomatedLab-VMs`. The

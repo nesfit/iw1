@@ -15,7 +15,7 @@ lectures/
 | L00 | Úvod                                                                                                | ✔    |
 | L01 | Instalace, Update, Migrace                                                                          | ✔    |
 | L02 | Vytváření bitových kopií systému, konfigurační průchody, virtuální disky                            | ✔    |
-| L03 | Správa a nasazení bitových kopií systému, ovladačů, balíčků, MDT                                    | ✔    |
+| L03 | Správa a nasazení bitových kopií systému, ovladačů, balíčků, Autopilot                           | ✔    |
 | L04 | Nastavení sítě, IPv4, IPv6, směrování, nástroje pro správu, bezdrátové sítě, tiskárny               | ✔    |
 | L05 | Windows Firewall, vzdálená plocha/správa                                                            | ✔    |
 | L06 | Sdílení a zabezpečení prostředků, soubory offline, NTFS, EFS, BitLocker                             | ✔    |
@@ -71,5 +71,13 @@ settings; the preview then matches the CLI output.
 - Content that needs a decision before the next run is marked
   `<!-- REVIEW: ... -->` right above the affected slide text. Search for
   `REVIEW:` before the semester starts.
+- Every deck was brought to the 2026 state of Windows 11 24H2/25H2 in September
+  2026. New facts carry a `Zdroj: <url>` line in the speaker note of the slide.
+  The per-deck change logs (`Lxx/UPDATE-2026.md`) are the teacher's working
+  notes and are git-ignored.
+- Screenshots from Windows 7/8/10 are still in the decks. Each deck has one
+  `<!-- TODO-SCREENSHOT: ... -->` comment after the front matter listing the
+  slides whose screenshots should be retaken on a C304 station (Windows 11
+  Education 25H2).
 - The old `.pptx` sources live in `.tmp/` (git-ignored) until every deck is
   converted; use `nix run .#pptx-dump` to pull their text, links and images.

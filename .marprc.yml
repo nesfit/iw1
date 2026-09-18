@@ -1,0 +1,10 @@
+# marp-cli configuration shared by `nix run .#preview`, `nix build` and the
+# VS Code Marp extension (set "markdown.marp.themes" to lectures/themes there).
+themeSet: lectures/themes
+html: true
+allowLocalFiles: true
+# Soft line breaks inside a paragraph/bullet are just wrapping in the source;
+# a hard break needs a trailing backslash.
+options:
+  markdown:
+    breaks: false

@@ -1,1 +1,7 @@
 .DS_Store
+.tmp
+result
+result-*
+.direnv/
+build/
+lectures/*/UPDATE-2026.md

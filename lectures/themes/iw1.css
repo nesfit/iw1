@@ -1,0 +1,186 @@
+/* @theme iw1 */
+/*
+ * IW1 Marp theme – clean successor of the old PowerPoint template
+ * (white background, Calibri-like sans, blue accents, running header
+ * "course | lecture", author footer, "n / total" page numbers).
+ */
+@import 'default';
+
+:root {
+  --iw1-blue: #1f497d;
+  --iw1-blue-light: #4f81bd;
+  --iw1-grey: #595959;
+  --iw1-warn: #c0504d;
+}
+
+section {
+  font-family: Calibri, Carlito, 'Segoe UI', 'Noto Sans', 'Liberation Sans', Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.35;
+  padding: 90px 70px 70px;
+  color: #000;
+  background: #fff;
+  /* The default theme centres content with place-content (also on block
+     containers); pin content to the top on ordinary slides. */
+  place-content: start;
+  justify-content: flex-start;
+}
+
+section h1 {
+  font-size: 1.5em;
+  color: var(--iw1-blue);
+  margin: 0 0 0.6em;
+  padding-bottom: 0.15em;
+  border-bottom: 3px solid var(--iw1-blue-light);
+}
+
+section h2 {
+  font-size: 1.15em;
+  color: var(--iw1-blue);
+}
+
+section ul,
+section ol {
+  margin: 0.2em 0;
+}
+
+section li {
+  margin: 0.15em 0;
+}
+
+section li > ul,
+section li > ol {
+  font-size: 0.9em;
+}
+
+section strong {
+  color: var(--iw1-blue);
+}
+
+section .warn,
+section li.warn {
+  color: var(--iw1-warn);
+  font-weight: bold;
+}
+
+section code {
+  font-size: 0.85em;
+}
+
+/* Running header: "Desktop systémy Microsoft Windows <span>Lecture title</span>" */
+section header {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 44px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--iw1-blue);
+  color: #fff;
+  font-size: 18px;
+}
+
+section footer {
+  left: 0;
+  right: 120px;
+  bottom: 0;
+  height: 40px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--iw1-grey);
+  font-size: 16px;
+}
+
+/* "3 / 12" page numbers */
+section::after {
+  right: 24px;
+  bottom: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: var(--iw1-grey);
+  font-size: 16px;
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+
+/* Deck title slide: <!-- _class: title --> */
+section.title {
+  place-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.title h1 {
+  font-size: 2em;
+  border: none;
+  margin-bottom: 0.1em;
+}
+
+section.title h2 {
+  font-size: 1.3em;
+  color: var(--iw1-grey);
+  margin-top: 0;
+}
+
+section.title p {
+  margin: 0.8em 0;
+  color: var(--iw1-grey);
+}
+
+/* Section divider: <!-- _class: section --> */
+section.section {
+  place-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.section h1 {
+  font-size: 2em;
+  border: none;
+}
+
+/* Two columns: wrap content in <div class="cols"> ... </div> */
+section .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+}
+
+section img {
+  max-height: 60vh;
+}
+
+section img[alt~='center'] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Dense slide (many bullets / long table): <!-- _class: dense --> */
+section.dense {
+  font-size: 22px;
+  padding-top: 70px;
+}
+
+section.dense h1 {
+  margin-bottom: 0.4em;
+}
+
+section table {
+  font-size: 0.8em;
+  margin: 0.3em auto;
+}
+
+section th {
+  background: var(--iw1-blue);
+  color: #fff;
+}
+
+section .cols img {
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+}

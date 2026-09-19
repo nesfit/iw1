@@ -2,8 +2,8 @@
 
 ## How the exercises are run (from September 2026)
 
-- The course is taught in three one-day modules (Fridays 18.9., 2.10., 9.10.; blocks
-  7–13 h and 13–19 h). Module 1 = E01 + E02 (7 points), module 2 = E03 + E04
+- The course is taught in three one-day modules (Fridays 18. 9., 2. 10. and 9. 10. 2026; blocks
+  7–13 h and 13–19 h). Module 1 = E01 + E02 (7 points: E01 4, E02 3), module 2 = E03 + E04
   (7 points), module 3 = E05 + E06 (6 points); 20 points in total, they form the
   zápočet.
 - There is no lecturer-led part. Every exercise is `Lab 00` (AutomatedLab setup of
@@ -24,7 +24,8 @@ this section and update it when the room changes.
 
 - 19 seats `h01`–`h19`: Windows 11 Education 25H2 (build 26200), 64 GB RAM,
   AMD Ryzen 5 PRO 5650G (6C/12T), one Realtek 2.5GbE NIC.
-- Students work as the local user `root` / `root4lab` (local admin, autologon).
+- Students work as the local user `root` / `root4lab` (local admin, autologon;
+  note the lower-case `l` – the VM accounts use `root4Lab`).
 - Drives: `C:` system — **UWF-protected** (a reboot rolls back everything on
   C:, including `C:\ProgramData\AutomatedLab` metadata and Hyper-V VM
   registrations); `D:` (data-ssd) and `E:` (data-nvme) **persist**.
@@ -41,8 +42,15 @@ this section and update it when the room changes.
   | file | operating systems AutomatedLab detects |
   | --- | --- |
   | `win11.iso` | Windows 11 10.0.26100, multi-edition (Home/Education/**Pro**/…) — labs use `'Windows 11 Pro'`, E05 also `'Windows 11 Education'` |
+  | | the ISO is **24H2 (build 26100)**, so every lab VM runs 24H2 while the hosts run 25H2 (26200) |
   | `SERVER_EVAL_x64FRE_en-us.iso` | `'Windows Server 2022 Datacenter Evaluation (Desktop Experience)'` (+ Standard, + Core variants) |
   | `winpe-w10-amd64.iso`, `winpe-w11-amd64.iso` | plain ADK WinPE amd64, no add-ons |
+
+- `D:\LabSources\SoftwarePackages\IW1\E06\utils` should hold a copy of
+  `exercises/E06/utils` (Crash.exe, alloc_memory.ps1, simulate_workload.vbs,
+  send_nefs_mail.vbs, fsaTemplate.xml); E06 Lab 00 falls back to downloading
+  them from GitHub `main` when the folder is missing. E01 Lab 06 downloads
+  `HardwareReadiness.ps1` into the VM if it is not in SoftwarePackages.
 
 - vSwitches: ONLY the built-in **Default Switch** (NAT — gives VMs DHCP and
   internet). There is **no 'External' switch and none must be created**: it
@@ -61,9 +69,20 @@ part identical and the per-exercise delta minimal:
   `Set-LabInstallationCredential -Username root -Password root4Lab`
   (all VM accounts and the `testing.local` domain use root / root4Lab),
 - defaults `'Windows 11 Pro'`, 8 GB RAM, 4 vCPU per machine — at most 3 VMs
-  concurrently (host budget ≤ 32 GB RAM and ≤ 12 vCPU for VMs),
+  concurrently (host budget ≤ 32 GB RAM and ≤ 12 vCPU for VMs); every machine is
+  **Generation 2 with Secure Boot (Microsoft Windows template) and a vTPM**, set
+  once in `$PSDefaultParameterValues` (`VmGeneration = 2`,
+  `HypervProperties = @{ EnableTpm = 'true'; EnableSecureBoot = 'on'; SecureBootTemplate = 'MicrosoftWindows' }`)
+  so the VMs meet the Windows 11 hardware requirements (BitLocker, Setup checks),
+  Consequence: Windows 11 24H2 turns on **device encryption** of the OS volume
+  during its unattended install (BitLocker, clear key, no protector). It blocks
+  `Sysprep /generalize` (0x80310039), so E02 decrypts C: on W11-SOURCE in Lab 00;
+  other exercises can use the encrypted state as teaching material (`manage-bde -status`),
 - adapters: `LAN0` → 'Default Switch' (DHCP), `LAN1` → Private1 with fixed
-  addressing — clients `.10`/`.11`/`.12`, DC `.20`, domain client `.21`.
+  addressing — clients `.10`/`.11`/`.12`, DC `.20`, domain client `.21`; LAN1
+  never gets a default gateway (there is no router in the lab network). In E03
+  the script leaves LAN1 on W11-2/W11-3 unconfigured after installation so the
+  students assign `.11`/`.12` themselves in Lab 01.
   **Exception:** in the domain labs (E05, E06) every machine has only the
   Private1 adapter (no internet) — AutomatedLab 5.61 crashes in
   `Wait-LWHypervVMRestart` ('Cannot index into a null array') when machines
@@ -72,8 +91,10 @@ part identical and the per-exercise delta minimal:
   `Wait-LWHypervVMRestart`, under the multi-NIC check, delay the inspected
   machine first — `$delayedStart += $StartMachinesWhileWaiting[0]` — and
   only then filter it out of the list, keeping the result an array),
-- AutomatedLab **disables UAC** inside lab VMs; exercises that depend on UAC
-  (E03, E05) re-enable it at the end of their script,
+- AutomatedLab deploys every VM with **UAC disabled, Windows Firewall off in all
+  profiles and Remote Desktop enabled without NLA** (unattend + Initialization
+  script). E03 restores the Windows defaults after installation (firewall on,
+  RD off, NLA on); E03, E04 and E05 re-enable UAC at the end of their script,
 - teardown between exercises: `Import-Lab -Name <id> -NoValidation;
   Remove-Lab` — in a fresh session AutomatedLab 5.61 prints red
   `Get-LabMachineDefinition`/`AddRange` errors while doing so; they are

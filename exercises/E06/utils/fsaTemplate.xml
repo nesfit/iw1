@@ -38,7 +38,7 @@
 		<DataCollectorType>3</DataCollectorType>
 		<Name>DataCollector01</Name>
 		<Alert>\LogicalDisk(C:)\% Free Space&lt;95</Alert>
-		<AlertDisplayName>\Logický disk(C:)\% volného místa&lt;80</AlertDisplayName>
+		<AlertDisplayName>\LogicalDisk(C:)\% Free Space&lt;95</AlertDisplayName>
 		<EventLog>-1</EventLog>
 		<SampleInterval>10</SampleInterval>
 		<Task>

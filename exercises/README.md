@@ -95,6 +95,9 @@ part identical and the per-exercise delta minimal:
   profiles and Remote Desktop enabled without NLA** (unattend + Initialization
   script). E03 restores the Windows defaults after installation (firewall on,
   RD off, NLA on); E03, E04 and E05 re-enable UAC at the end of their script,
+  and E02 additionally removes AutomatedLab's autologon (plaintext `Winlogon\DefaultPassword`)
+  and re-enables UAC on W11-SOURCE before the Lab00 checkpoint – without it the image
+  captured in E02 hangs in OOBE ("Just a moment") after deployment,
 - teardown between exercises: `Import-Lab -Name <id> -NoValidation;
   Remove-Lab` — in a fresh session AutomatedLab 5.61 prints red
   `Get-LabMachineDefinition`/`AddRange` errors while doing so; they are

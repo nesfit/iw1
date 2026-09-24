@@ -5,7 +5,7 @@
 - The course is taught in three one-day modules (Fridays 18. 9., 2. 10. and 9. 10. 2026; blocks
   7–13 h and 13–19 h). Module 1 = E01 + E02 (7 points: E01 4, E02 3), module 2 = E03 + E04
   (7 points), module 3 = E05 + E06 (6 points); 20 points in total, they form the
-  zápočet.
+  zápočet (minimum 10 points).
 - There is no lecturer-led part. Every exercise is `Lab 00` (AutomatedLab setup of
   the VMs) followed by `Lab 01`, `Lab 02`, … that students work through on their
   own, following the step-by-step instructions, and ask the lecturer only about

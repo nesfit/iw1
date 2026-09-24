@@ -26,9 +26,14 @@ this section and update it when the room changes.
   AMD Ryzen 5 PRO 5650G (6C/12T), one Realtek 2.5GbE NIC.
 - Students work as the local user `root` / `root4lab` (local admin, autologon;
   note the lower-case `l` – the VM accounts use `root4Lab`).
-- Drives: `C:` system — **UWF-protected** (a reboot rolls back everything on
-  C:, including `C:\ProgramData\AutomatedLab` metadata and Hyper-V VM
-  registrations); `D:` (data-ssd) and `E:` (data-nvme) **persist**.
+- Drives: `C:` system — **UWF-protected**, but as of 9/2026 every station runs
+  the disk overlay in **persistent** mode (`uwfmgr get-config`: *Persistent:
+  ON*, *Persistent overlay will be preserved after system restart*), so a
+  reboot does **not** roll back C: — `C:\ProgramData\AutomatedLab` metadata,
+  Hyper-V VM registrations and scheduled tasks survive it (checked on all 19
+  stations on 2026-09-24). Only switching the overlay back to rollback mode
+  (or an explicit overlay reset) discards them. `D:` (data-ssd) and `E:`
+  (data-nvme) **persist** in any case.
   Because they persist, student artifacts accumulate there (e.g. the WinPE
   ISOs students copy into `D:\LabSources\ISOs` in E02 Lab 02) — sweep them
   between semesters, keeping the `D:\LabSources` payloads and
@@ -63,7 +68,8 @@ Every exercise carries the same canonical AutomatedLab block; keep the shared
 part identical and the per-exercise delta minimal:
 
 - a cleanup prologue makes the script **re-runnable from scratch at any
-  time** — including right after a UWF reset (removes this lab's VMs,
+  time** — whether the previous run's VMs are still registered or were
+  dropped by a UWF rollback (removes this lab's VMs,
   orphaned VM folders on E: and stale metadata; keeps `BASE_*.vhdx`),
 - `New-LabDefinition -Name <exercise id> … -VmPath 'E:\AutomatedLab-VMs'`,
   `Set-LabInstallationCredential -Username root -Password root4Lab`
@@ -101,8 +107,10 @@ part identical and the per-exercise delta minimal:
 - teardown between exercises: `Import-Lab -Name <id> -NoValidation;
   Remove-Lab` — in a fresh session AutomatedLab 5.61 prints red
   `Get-LabMachineDefinition`/`AddRange` errors while doing so; they are
-  harmless (VMs and switches are removed). A reboot works too: UWF resets C:
-  and the next lab script cleans up the leftovers on E:.
+  harmless (VMs and switches are removed). With the persistent UWF overlay a
+  reboot removes nothing; the next lab script's cleanup prologue removes its
+  own leftovers, but VMs of other exercises stay registered until their
+  teardown.
 
 Known cosmetic issue: the stations have Pester 6.x installed, which is
 incompatible with AutomatedLab's post-deployment tests — `Install-Lab` ends

@@ -8,14 +8,14 @@ Lectures and computer labs storage for [IW1](https://www.fit.vut.cz/study/course
 | **L01** | 18.09. | **Instalace, Update, Migrace**                                                                          |
 | E01     | 18.09. | Instalace, Update, Migrace                                                                              |
 | **L02** | 18.09. | **Vytváření bitových kopií systému, konfigurační průchody, virtuální disky**                            |
-| **L03** | 18.09. | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, Windows Autopilot a Intune**          |
-| E02     | 18.09. | Bitové kopie systému – Windows ADK, Windows PE, úprava WIM pomocí DISM, Sysprep a nasazení obrazu       |
+| **L03** | 02.10. | **Správa a nasazení bitových kopií systému, ovladačů, balíčků, Windows Autopilot a Intune**          |
+| E02     | 02.10. | Bitové kopie systému – Windows ADK, Windows PE, úprava WIM pomocí DISM, Sysprep a nasazení obrazu       |
 | **L04** | 02.10. | **Nastavení sítě, IPv4, IPv6, směrování, nástroje pro správu, bezdrátové sítě, tiskárny**               |
 | **L05** | 02.10. | **Windows Firewall, vzdálená plocha/správa**                                                            |
 | E03     | 02.10. | Síťování ve Windows, Windows Firewall, IP adresace, vzdálená správa                                     |
 | **L06** | 02.10. | **Sdílení a zabezpečení prostředků, soubory offline, NTFS, EFS, BitLocker**                             |
 | E04     | 02.10. | Sdílení a zabezpečení prostředků, soubory offline, NTFS, EFS                                            |
-| **L07** | 02.10. | **Řízení uživatelských účtů (UAC)**                                                                     |
+| **L07** | 09.10. | **Řízení uživatelských účtů (UAC)**                                                                     |
 | E05     | 09.10. | UAC, zásady omezení softwaru a AppLocker; správa disků – dynamické disky, RAID svazky, Storage Spaces   |
 | **L08** | 09.10. | **Správa zařízení, disků, ovladačů a napájení**                                                         |
 | **L09** | 09.10. | **Monitorování a výkon – Zabezpečení Windows, Správce úloh, služby, Prohlížeč událostí, Sledování výkonu** |

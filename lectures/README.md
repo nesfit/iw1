@@ -31,7 +31,7 @@ lectures/
 ```bash
 nix develop                 # marp-cli, python-pptx, chromium (Linux), nil, nixfmt
 nix run .#preview           # live preview of lectures/ at http://localhost:8080
-nix build .#lectures        # result/Lxx/Lxx.html for every deck
+nix build .#lectures        # result/Lxx/Lxx.html for every deck + index.html
 nix build .#lectures-pdf    # result/Lxx/Lxx.pdf (Linux; headless chromium)
 nix run .#pdf               # build/Lxx/Lxx.pdf with a local browser (any OS)
 nix run .#pptx-dump -- .tmp/iw1-lecture-01.pptx --images lectures/L01/img

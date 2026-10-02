@@ -1,0 +1,58 @@
+# Builds the Marp decks with the flake (nix build .#lectures) and publishes
+# the result to GitHub Pages: https://nesfit.github.io/iw1/
+#
+# Repository settings -> Pages -> Source must be "GitHub Actions"; the
+# configure-pages step tries to switch it on itself on the first run.
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lectures/**"
+      - ".marprc.yml"
+      - "flake.*"
+      - "lib/**"
+      - "nix/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v16
+      - uses: DeterminateSystems/magic-nix-cache-action@v9
+      - name: Check the flake
+        run: nix flake check
+      - name: Build the decks
+        run: |
+          nix build .#lectures
+          cp -rL result _site
+          chmod -R u+w _site
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
